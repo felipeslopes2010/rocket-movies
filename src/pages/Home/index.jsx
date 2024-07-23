@@ -16,7 +16,7 @@ export function Home() {
                     <Button
                         icon={FiPlus}
                         title="Adicionar filme"
-                        width="207px"
+                        width="208px"
                         padding="32px 16px"
                     />
                 </Menu>

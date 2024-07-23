@@ -10,7 +10,9 @@ export function Header() {
                 <Input
                     placeholder="Pesquisar pelo título"
                     type="text"
-                    className="header-input" // Adicione esta linha
+                    className="header-input"
+                    width="40%"
+                    margin="0 288px"
                 />
 
                 <div>
