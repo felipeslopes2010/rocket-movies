@@ -2,25 +2,31 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
 
-    header {
+    > header {
+        width: 100%;
         height: 144px;
+
         background-color: rgba(255, 133, 155, 0.05);
+
+        display: flex;
+        align-items: center;
 
         > div {
             width: fit-content;
+
             display: flex;
             align-items: center;
+
             margin: 64px 0px 64px 144px;
-            color: ${({ theme }) => theme.COLORS.ROSE};
+            
             font-size: 16px;
+            color: ${({ theme }) => theme.COLORS.ROSE};
+
             cursor: pointer;
 
-            svg {
-                font-size: 20px;
+            > svg {
+                font-size: 24px;
                 margin-right: 8px;
             }
 
@@ -34,6 +40,7 @@ export const Container = styled.div`
 export const Form = styled.form`
     width: 340px;
     margin: 0 auto;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,12 +49,13 @@ export const Form = styled.form`
 
 
 export const Avatar = styled.div`
-    width: 186px;
-
-    margin-bottom: 64px;
     position: relative;
+   
+    width: 186px;
+    margin-bottom: 64px;
     
     > img {
+        height: 186px;
         height: 186px;
         margin-top: -93px;
         border-radius: 50%;
@@ -55,21 +63,30 @@ export const Avatar = styled.div`
 
     > label {
         position: absolute;
-        bottom: 0;
-        right: 10px;
+        bottom: 7px;
+        right: 7px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 48px;
+        width: 48px;
         padding: 14px;
+
         background-color: ${({ theme }) => theme.COLORS.ROSE};
-        color: ${( {theme }) => theme.COLORS.BACKGROUND_800};
         border-radius: 50%;
+
         cursor: pointer;
 
-        input {
+        > input {
             display: none;
         }
 
-        svg {
+        > svg {
             width: 20px;
             height: 20px;
+            color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
         }
     }
 `;
