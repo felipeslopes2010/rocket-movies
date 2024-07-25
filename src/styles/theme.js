@@ -6,11 +6,13 @@ export default {
       BACKGROUND_700: "#3E3B47",
   
       WHITE: "#F4EDE8",
+      WHITE_300: "#E5E5E5",
       ORANGE: "#FF9000",
+
   
       GRAY_100: "#CAC4CF",
       GRAY_300: "#948F99",
   
-      ROSE: "#FF859B"
+      ROSE: "#FF859B",
     }
   }
