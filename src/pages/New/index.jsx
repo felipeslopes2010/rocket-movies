@@ -29,7 +29,7 @@ export function New() {
                         <Input type="number" width="50%" margin="0px 0px 20px 0px" placeholder="Sua nota (de 0 a 5)" />
                     </div>
 
-                    <TextArea placeholder="Observações" maxlength="900" />
+                    <TextArea placeholder="Observações" />
 
                     <Section title="Marcadores">
                         <div className="tags">

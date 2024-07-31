@@ -13,6 +13,12 @@ export const Container = styled.textarea`
     margin-bottom: 20px;
     padding: 16px 18px;
     border-radius: 10px;
+    overflow-x: hidden;
+    word-break: break-word;
+
+    overflow-y: auto;
+
+    scrollbar-color: ${({ theme }) => theme.COLORS.ROSE} transparent;
 
     &::placeholder {
         color: ${({ theme }) => theme.COLORS.GRAY_300};
