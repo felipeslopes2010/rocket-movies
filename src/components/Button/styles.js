@@ -6,8 +6,8 @@ export const Container = styled.button`
     justify-content: center;
     align-items: center;
     gap: 2.5px;
-    background-color: ${( {theme }) => theme.COLORS.ROSE};
-    color: ${( {theme }) => theme.COLORS.BACKGROUND_800};
+    background-color: ${props => props.backgroundColor || props.theme.COLORS.ROSE};
+    color: ${props => props.color || props.theme.COLORS.BACKGROUND_800};
 
     height: 56px;
     border: none;

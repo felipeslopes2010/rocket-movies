@@ -7,12 +7,15 @@ export default {
   
       WHITE: "#F4EDE8",
       WHITE_300: "#E5E5E5",
-      ORANGE: "#FF9000",
-
+      WHITE_900: "#FFFFFF",
   
       GRAY_100: "#CAC4CF",
       GRAY_300: "#948F99",
+      GRAY_400: "#999591",
+
+      BLACK_900: "#0D0C0F",
   
       ROSE: "#FF859B",
+      ORANGE: "#FF9000",
     }
   }
