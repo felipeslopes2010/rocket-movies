@@ -20,8 +20,9 @@ export function New() {
                     <header>
                         <FiArrowLeft />
                         <span>Voltar</span>
-                        <h1>Novo filme</h1>
                     </header>
+
+                    <h1>Novo filme</h1>
 
                     <div className="input-wrapper">
                         <Input type="text" width="50%" margin="0px 0px 20px 0px" placeholder="Título" />
