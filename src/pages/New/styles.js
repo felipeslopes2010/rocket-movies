@@ -10,9 +10,13 @@ export const Container = styled.div`
 
 export const Form = styled.form`
     > header {
+        width: fit-content;
+        
         display: flex;
         align-items: center;
         gap: 8px;
+
+        cursor: pointer;
 
         > svg, span {
             font-size: 16px;

@@ -10,6 +10,12 @@ export const Container = styled.div`
     margin: ${props => props.margin || '0 64px 0 64px'};
     border-radius: 10px;
 
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
     > input {
         height: 56px;
         width: 100%;
@@ -17,6 +23,9 @@ export const Container = styled.div`
         color: ${({theme}) => theme.COLORS.WHITE};
         background: transparent;
         border: none;
+
+
+
 
         &::placeholder {
             color: ${({ theme }) => theme.COLORS.GRAY_300};
