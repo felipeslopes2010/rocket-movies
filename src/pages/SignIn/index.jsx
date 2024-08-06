@@ -18,6 +18,7 @@ export function SignIn() {
                     placeholder="E-mail"
                     type="text"
                     icon={FiMail}
+                    margin={"0px 0px 8px 0px"}
                 />
 
                 <Input

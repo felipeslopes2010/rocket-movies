@@ -18,12 +18,14 @@ export function SignUp() {
                     placeholder="Nome"
                     type="text"
                     icon={FiUser}
+                    margin={"0px 0px 8px 0px"}
                 />
 
                 <Input
                     placeholder="E-mail"
                     type="text"
                     icon={FiMail}
+                    margin={"0px 0px 8px 0px"}
                 />
 
                 <Input
