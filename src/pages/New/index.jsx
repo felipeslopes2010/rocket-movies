@@ -7,7 +7,7 @@ import { Section } from "../../components/Section";
 import { NoteItem } from "../../components/NoteItem";
 import { Button } from "../../components/Button";
 
-import { Container, Form } from "./styles";
+import { Container, Form, StyledLink } from "./styles";
 
 
 export function New() {
@@ -17,10 +17,10 @@ export function New() {
 
             <main>
                 <Form>
-                    <header>
-                        <FiArrowLeft />
-                        <span>Voltar</span>
-                    </header>
+                    <StyledLink to="/">
+                            <FiArrowLeft />
+                            <span>Voltar</span>
+                    </StyledLink>
 
                     <h1>Novo filme</h1>
 

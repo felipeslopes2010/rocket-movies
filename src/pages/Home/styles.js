@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     height: 100vh;
@@ -34,4 +35,24 @@ export const Menu = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+`;
+
+export const NewMovie = styled(Link)`
+    width: 208px;
+    padding: 32px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5px;
+    background-color: ${({ theme }) => theme.COLORS.ROSE};
+    color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+
+    height: 56px;
+    border: none;
+    padding: 0 16px;
+    border-radius: 10px;
+    margin-top: 24px;
+    font-weight: 500;
+    
+    cursor: pointer;
 `;
