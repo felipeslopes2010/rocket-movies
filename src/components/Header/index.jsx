@@ -1,4 +1,6 @@
 import { Input } from "../Input";
+import { Link } from "react-router-dom";
+
 import { Container, Profile } from "./styles";
 
 export function Header() {
@@ -15,12 +17,16 @@ export function Header() {
                     margin="0 288px"
                 />
 
-                <div>
-                    <span>Felipe Kimura</span>
-                    <strong>sair</strong>
-                </div>
+                <Link to="/profile">
+                <div className="user-infos">
+                    <div>
+                        <span>Felipe Kimura</span>
+                        <strong>sair</strong>
+                    </div>
 
-                <img src="https://www.github.com/felipeslopes2010.png" alt="Foto de usuário" />
+                    <img src="https://www.github.com/felipeslopes2010.png" alt="Foto de usuário" />
+                </div>
+                </Link>
             </Profile>
         </Container>
     );

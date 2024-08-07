@@ -21,10 +21,20 @@ export const Profile = styled.div`
         color: ${({ theme }) => theme.COLORS.ROSE};
     }
 
-    > img {
-        height: 64px;
-        width: 64px;
-        border-radius: 50%;
+    .header-input {
+        max-width: 630px;
+    }
+
+    .user-infos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+
+        > img {
+            height: 64px;
+            width: 64px;
+            border-radius: 50%;
     }
 
     > div {
@@ -32,13 +42,15 @@ export const Profile = styled.div`
         flex-direction: column;
         text-align: end;
 
-        strong {
+        > span {
+            font-size: 14px;
+            color: ${({ theme }) => theme.COLORS.WHITE};
+        }
+
+        > strong {
             font-size: 14px;
             color: ${({ theme }) => theme.COLORS.GRAY_300};
         }
     }
-
-    .header-input {
-        max-width: 630px;
-    }
+}
 `;
