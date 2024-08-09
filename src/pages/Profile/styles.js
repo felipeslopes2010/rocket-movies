@@ -14,8 +14,7 @@ export const Container = styled.div`
     }
     
     .header-button {
-            width: fit-content;
-
+        .controls {
             display: flex;
             align-items: center;
 
@@ -25,15 +24,16 @@ export const Container = styled.div`
             color: ${({ theme }) => theme.COLORS.ROSE};
 
             cursor: pointer;
+        }
 
-            > svg {
-                font-size: 24px;
-                margin-right: 8px;
-            }
+        svg {
+            font-size: 24px;
+            margin-right: 8px;
+        }
 
-            > span { 
-                font-size: 20px;
-            }
+        span { 
+            font-size: 20px;
+        }
     }
 `;
 

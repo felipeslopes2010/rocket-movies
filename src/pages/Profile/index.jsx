@@ -11,12 +11,12 @@ export function Profile() {
     return (
         <Container>
             <header>
-                <Link to="/">
-                    <div className="header-button">
+                <div className="header-button">
+                    <Link to="/" className="controls">
                         <FiArrowLeft />
                         <span>Voltar</span>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
             </header>
 
             <Form>
