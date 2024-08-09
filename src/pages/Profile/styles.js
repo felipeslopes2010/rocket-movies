@@ -11,8 +11,9 @@ export const Container = styled.div`
 
         display: flex;
         align-items: center;
-
-        > div {
+    }
+    
+    .header-button {
             width: fit-content;
 
             display: flex;
@@ -33,7 +34,6 @@ export const Container = styled.div`
             > span { 
                 font-size: 20px;
             }
-        }
     }
 `;
 
