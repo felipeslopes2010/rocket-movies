@@ -8,20 +8,27 @@ export const Container = styled.div`
     > main {
         max-width: 1137px;
         margin: 0 auto;
-
         > header {
-            width: fit-content;
-            
-            display: flex;
-            align-items: center;
-            gap: 8px;
-    
-            font-size: 16px;
-            color: ${({ theme }) => theme.COLORS.ROSE};
-    
-            margin: 40px 0px 20px;
+            > a {
+                width: fit-content;
+                
+                display: flex;
+                align-items: center;
+                gap: 8px;
+        
+                font-size: 16px;
+                margin: 40px 0px 20px;
 
-            cursor: pointer;
+                cursor: pointer;
+            }
+            
+            svg {
+                color: ${({ theme }) => theme.COLORS.ROSE};
+            }
+
+            span {
+                color: ${({ theme }) => theme.COLORS.ROSE};
+            }
         }
     }
 `;

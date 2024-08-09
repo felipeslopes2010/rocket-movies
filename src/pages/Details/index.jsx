@@ -1,5 +1,6 @@
 import { FiArrowLeft } from "react-icons/fi";
 import { FiClock } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 import FulfilledStar from "../../assets/fulfilled-star.png";
 import EmptyStar from "../../assets/empty-star.png";
@@ -15,8 +16,10 @@ export function Details() {
 
             <main>
                 <header>
-                    <FiArrowLeft />
-                    <span>Voltar</span>
+                    <Link to="/">
+                        <FiArrowLeft />
+                        <span>Voltar</span>
+                    </Link>
                 </header>
 
                 <Content>
