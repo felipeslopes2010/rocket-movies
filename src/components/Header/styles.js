@@ -31,7 +31,7 @@ export const Profile = styled.div`
         justify-content: center;
         gap: 9px;
 
-        > img {
+        img {
             height: 64px;
             width: 64px;
             border-radius: 50%;
@@ -42,14 +42,15 @@ export const Profile = styled.div`
         flex-direction: column;
         text-align: end;
 
-        > span {
-            font-size: 14px;
+        span {
+            font-size: 16px;
             color: ${({ theme }) => theme.COLORS.WHITE};
         }
 
         > strong {
-            font-size: 14px;
+            font-size: 16px;
             color: ${({ theme }) => theme.COLORS.GRAY_300};
+            cursor: pointer;
         }
     }
 }

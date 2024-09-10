@@ -1,9 +1,14 @@
 import { Input } from "../Input";
 import { Link } from "react-router-dom";
 
+import { useAuth } from "../../hooks/auth"
+
 import { Container, Profile } from "./styles";
 
+
 export function Header() {
+    const { signOut } = useAuth();
+
     return (
         <Container>
             <Profile>
@@ -17,16 +22,22 @@ export function Header() {
                     margin="0 288px"
                 />
 
-                <Link to="/profile">
                 <div className="user-infos">
                     <div>
+                    <Link to="/profile">
                         <span>Felipe Kimura</span>
-                        <strong>sair</strong>
+                    </Link>
+                        <strong
+                            onClick={signOut}
+                        >
+                            sair
+                        </strong>
                     </div>
 
-                    <img src="https://www.github.com/felipeslopes2010.png" alt="Foto de usuário" />
+                    <Link to="/profile">
+                        <img src="https://www.github.com/felipeslopes2010.png" alt="Foto de usuário" />
+                    </Link>
                 </div>
-                </Link>
             </Profile>
         </Container>
     );
