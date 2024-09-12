@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FiArrowLeft } from "react-icons/fi";
 
 import { Header } from "../../components/Header";
@@ -11,6 +12,14 @@ import { Container, Form, StyledLink } from "./styles";
 
 
 export function New() {
+    const [tags, setTags] = useState([]);
+    const [newTag, setNewTag] = useState("");
+
+    function handleAddTag() {
+        setTags(prevState => [...prevState, newTag]);
+        setNewTag("");
+    }
+
     return (
         <Container>
             <Header />
@@ -18,8 +27,8 @@ export function New() {
             <main>
                 <Form>
                     <StyledLink to="/">
-                            <FiArrowLeft />
-                            <span>Voltar</span>
+                        <FiArrowLeft />
+                        <span>Voltar</span>
                     </StyledLink>
 
                     <h1>Novo filme</h1>
@@ -33,14 +42,28 @@ export function New() {
 
                     <Section title="Marcadores">
                         <div className="tags">
-                            <NoteItem value="DAIODWJOIAWJDIOWAJDIOJAWD" />
-                            <NoteItem value="REACT" />
-                            <NoteItem isNew placeholder="Novo marcador" />
+                            {
+                                tags.map((tag, index) => (
+                                    <NoteItem
+                                        key={String(index)}
+                                        value={tag}
+                                        onClick={() => { }}
+                                    />
+                                ))
+                            }
+
+                            <NoteItem
+                                isNew
+                                placeholder="Novo marcador"
+                                value={newTag}
+                                onChange={e => setNewTag(e.target.value)}
+                                onClick={handleAddTag}
+                            />
                         </div>
                     </Section>
 
                     <div className="button-wrapper">
-                        <Button title="Excluir filme" color={({ theme }) => theme.COLORS.ROSE} backgroundColor={({ theme }) => theme.COLORS.BLACK_900}/>
+                        <Button title="Excluir filme" color={({ theme }) => theme.COLORS.ROSE} backgroundColor={({ theme }) => theme.COLORS.BLACK_900} />
                         <Button title="Salvar alterações" />
                     </div>
                 </Form>
