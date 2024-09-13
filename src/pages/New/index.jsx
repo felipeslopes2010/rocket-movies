@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
 import { Header } from "../../components/Header";
@@ -8,12 +9,19 @@ import { Section } from "../../components/Section";
 import { NoteItem } from "../../components/NoteItem";
 import { Button } from "../../components/Button";
 
+import { api } from "../../services/api"
+
 import { Container, Form, StyledLink } from "./styles";
 
 
 export function New() {
+    const [title, setTitle] = useState("");
+    const [rating, setRating] = useState(0);
+    const [description, setDescrption] = useState("");
     const [tags, setTags] = useState([]);
     const [newTag, setNewTag] = useState("");
+
+    const navigate = useNavigate();
 
     function handleAddTag() {
         setTags(prevState => [...prevState, newTag]);
@@ -22,6 +30,27 @@ export function New() {
 
     function handleRemoveTag(tagDeleted) {
         setTags(prevState => prevState.filter(tag => tag !== tagDeleted));
+    }
+
+    async function handleNewMovie() {
+        const movie = {
+            title: title,
+            description: description,
+            rating: rating,
+            tags: tags,
+        }
+
+        try {
+            await api.post("/movies", movie);
+            alert("Filme criado com sucesso!")
+            navigate("/");
+        } catch(error) {
+            if (error.response) {
+                alert(error.response.data.message);
+            } else {
+                alert("Não foi possível cadastrar o filme.");
+            }
+        }
     }
 
     return (
@@ -38,11 +67,28 @@ export function New() {
                     <h1>Novo filme</h1>
 
                     <div className="input-wrapper">
-                        <Input type="text" width="50%" margin="0px 0px 20px 0px" placeholder="Título" />
-                        <Input type="number" width="50%" margin="0px 0px 20px 0px" min={0} max={5} placeholder="Sua nota (de 0 a 5)" />
+                        <Input
+                            type="text"
+                            width="50%"
+                            margin="0px 0px 20px 0px"
+                            placeholder="Título"
+                            onChange={e => setTitle(e.target.value)}
+                        />
+                        <Input
+                            type="number"
+                            width="50%"
+                            margin="0px 0px 20px 0px"
+                            min={0}
+                            max={5}
+                            placeholder="Sua nota (de 0 a 5)"
+                            onChange={e => setRating(e.target.value)}
+                        />
                     </div>
 
-                    <TextArea placeholder="Observações" />
+                    <TextArea
+                        placeholder="Observações"
+                        onChange={e => setDescrption(e.target.value)}
+                    />
 
                     <Section title="Marcadores">
                         <div className="tags">
@@ -67,8 +113,16 @@ export function New() {
                     </Section>
 
                     <div className="button-wrapper">
-                        <Button title="Excluir filme" color={({ theme }) => theme.COLORS.ROSE} backgroundColor={({ theme }) => theme.COLORS.BLACK_900} />
-                        <Button title="Salvar alterações" />
+                        <Button
+                            title="Excluir filme"
+                            color={({ theme }) => theme.COLORS.ROSE}
+                            backgroundColor={({ theme }) => theme.COLORS.BLACK_900}
+                        />
+                        
+                        <Button
+                            title="Salvar alterações"
+                            onClick={handleNewMovie}
+                        />
                     </div>
                 </Form>
             </main>
