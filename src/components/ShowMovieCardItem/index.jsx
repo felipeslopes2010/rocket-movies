@@ -1,6 +1,6 @@
 import { Container } from "./styles";
 
-export function ShowNoteItem( {value}) {
+export function ShowMovieCardItem( {value}) {
     return (
         <Container>
             {value}

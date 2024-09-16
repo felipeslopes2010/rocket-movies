@@ -6,7 +6,7 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { TextArea } from "../../components/TextArea";
 import { Section } from "../../components/Section";
-import { NoteItem } from "../../components/NoteItem";
+import { MovieCardItem } from "../../components/MovieCardItem";
 import { Button } from "../../components/Button";
 
 import { api } from "../../services/api"
@@ -106,7 +106,7 @@ export function New() {
                         <div className="tags">
                             {
                                 tags.map((tag, index) => (
-                                    <NoteItem
+                                    <MovieCardItem
                                         key={String(index)}
                                         value={tag}
                                         onClick={() => handleRemoveTag(tag)}
@@ -114,7 +114,7 @@ export function New() {
                                 ))
                             }
 
-                            <NoteItem
+                            <MovieCardItem
                                 isNew
                                 placeholder="Novo marcador"
                                 value={newTag}

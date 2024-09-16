@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import FulfilledStar from "../../assets/fulfilled-star.png";
 import EmptyStar from "../../assets/empty-star.png";
 import { Header } from "../../components/Header"
-import { ShowNoteItem } from "../../components/ShowNoteItem";
+import { ShowMovieCardItem } from "../../components/ShowMovieCardItem";
 
 import { Container, Content } from "./styles";
 
@@ -44,9 +44,9 @@ export function Details() {
                     </div>
 
                     <div className="tags-wrapper">
-                        <ShowNoteItem value="Ficção Científica" />
-                        <ShowNoteItem value="Drama" />
-                        <ShowNoteItem value="Família" />
+                        <ShowMovieCardItem value="Ficção Científica" />
+                        <ShowMovieCardItem value="Drama" />
+                        <ShowMovieCardItem value="Família" />
                     </div>
 
                     <p>

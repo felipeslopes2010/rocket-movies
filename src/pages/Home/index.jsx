@@ -4,7 +4,7 @@ import { FiPlus } from "react-icons/fi";
 
 import { api } from "../../services/api";
 import { Header } from "../../components/Header";
-import { Note } from "../../components/Note";
+import { MovieCard } from "../../components/MovieCard";
 
 import { Container, Content, NewMovie, Section } from "./styles";
 
@@ -55,7 +55,7 @@ export function Home() {
                 <Section title="Meus Filmes">
                 {
                     filteredMovies.map(movie => (
-                        <Note
+                        <MovieCard
                             key={String(movie.id)}
                             data={movie}
                             onClick={() => handleDetails(movie.id)}

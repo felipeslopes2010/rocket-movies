@@ -2,7 +2,7 @@ import { Tag } from "../Tag"
 
 import { Container } from "./styles";
 
-export function Note({ data, ...rest }) {
+export function MovieCard({ data, ...rest }) {
     return (
         <Container {...rest}>
             <h2>{data.title}</h2>
