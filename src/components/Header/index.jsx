@@ -1,14 +1,13 @@
 import { Input } from "../Input";
 import { Link } from "react-router-dom";
 
-import { useAuth } from "../../hooks/auth"
+import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 import avatarPlaceHolder from "../../assets/avatar_placeholder.svg";
 
 import { Container, Profile } from "./styles";
 
-
-export function Header() {
+export function Header({ onSearchChange }) {
     const { signOut, user } = useAuth();
 
     const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceHolder;
@@ -24,16 +23,15 @@ export function Header() {
                     className="header-input"
                     width="40%"
                     margin="0 288px"
+                    onChange={e => onSearchChange(e.target.value)}
                 />
 
                 <div className="user-infos">
                     <div>
-                    <Link to="/profile">
-                        <span>{user.name}</span>
-                    </Link>
-                        <strong
-                            onClick={signOut}
-                        >
+                        <Link to="/profile">
+                            <span>{user.name}</span>
+                        </Link>
+                        <strong onClick={signOut}>
                             sair
                         </strong>
                     </div>
