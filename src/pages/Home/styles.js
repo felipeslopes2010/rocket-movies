@@ -13,16 +13,17 @@ export const Content = styled.div`
 export const Section = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    margin-top: 24px;
     
     &[title="Menu"] {
+        justify-content: space-between;
         padding: 30px 106px 37.5px 123px;
     }
     
     &[title="Meus Filmes"] {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 18px;
 
         height: calc(100vh - 320px);
         overflow-y: auto;
@@ -43,7 +44,8 @@ export const NewMovie = styled(Link)`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2.5px;
+    line-height: 0;
+    gap: 3px;
     background-color: ${({ theme }) => theme.COLORS.ROSE};
     color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
@@ -51,7 +53,6 @@ export const NewMovie = styled(Link)`
     border: none;
     padding: 0 16px;
     border-radius: 10px;
-    margin-top: 24px;
     font-weight: 500;
     
     cursor: pointer;
