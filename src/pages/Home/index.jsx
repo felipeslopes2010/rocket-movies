@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { FiPlus } from "react-icons/fi";
 
 import { api } from "../../services/api";
@@ -11,6 +12,12 @@ export function Home() {
     const [movies, setMovies] = useState([]);
     const [filteredMovies, setFilteredMovies] = useState([]);
     const [search, setSearch] = useState("");
+
+    const navigate = useNavigate();
+
+    function handleDetails(movieId) {
+        navigate(`/details/${movieId}`);
+    }
 
     useEffect(() => {
         async function loadMovies() {
@@ -50,9 +57,8 @@ export function Home() {
                     filteredMovies.map(movie => (
                         <Note
                             key={String(movie.id)}
-                            title={movie.title}
-                            description={movie.description}
-                            tags={movie.tags}
+                            data={movie}
+                            onClick={() => handleDetails(movie.id)}
                         />
                     ))
                 }

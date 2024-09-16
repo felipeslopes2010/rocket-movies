@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.button`
     width: 100%;
     background-color: rgba(255, 133, 155, 0.05);
     padding: 32px;
     border-radius: 16px;
+    border: none;
+    text-align: start;
+    color: ${({theme}) => theme.COLORS.WHITE};
 
     > h2 {
         margin-bottom: 8px;
