@@ -21,6 +21,15 @@ export const Container = styled.div`
 
                 cursor: pointer;
             }
+
+            > div {
+                width: fit-content;
+                display: flex;
+                align-items: center;
+                margin: 40px 0 20px;
+                gap: 6px;
+                cursor: pointer;
+            }
             
             svg {
                 color: ${({ theme }) => theme.COLORS.ROSE};
