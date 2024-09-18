@@ -13,7 +13,7 @@ export const Container = styled.button`
     border: none;
     padding: ${props => props.padding || '0 16px'};
     border-radius: 10px;
-    margin-top: 24px;
+    margin: ${props => props.margin || '24px 0 0 0'};
     font-weight: 500;
     
     cursor: pointer;

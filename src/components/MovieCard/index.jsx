@@ -1,11 +1,29 @@
+import { api } from "../../services/api"
+
 import { Tag } from "../Tag"
 
 import { Container } from "./styles";
 
 export function MovieCard({ data, ...rest }) {
+    async function handleRemove(event) {
+        event.stopPropagation();
+
+        const confirm = window.confirm("Deseja realmente remover o filme?");
+        
+        if(confirm) {
+            await api.delete(`/movies/${data.id}`);
+        }
+    }
+
     return (
         <Container {...rest}>
-            <h2>{data.title}</h2>
+            <div className="header">
+                <h2>{data.title}</h2>
+
+                <button onClick={handleRemove}>
+                    Excluir filme
+                 </button>
+            </div>
 
             <img src="../../src/assets/fulfilled-star.png" alt="Estrela Preenchida" />
             <img src="../../src/assets/fulfilled-star.png" alt="Estrela Preenchida" />

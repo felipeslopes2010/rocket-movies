@@ -1,6 +1,6 @@
 import { Container } from "./styles";
 
-export function Button({ icon: Icon, title, loading = false, width, color, backgroundColor, padding, ...rest }) {
+export function Button({ icon: Icon, title, loading = false, width, color, backgroundColor, margin, padding, ...rest }) {
     return (
         <Container
             type="button"
@@ -8,6 +8,7 @@ export function Button({ icon: Icon, title, loading = false, width, color, backg
             width={width}
             color={color}
             backgroundColor={backgroundColor}
+            margin={margin}
             padding={padding}
             {...rest}
         >

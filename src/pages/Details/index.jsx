@@ -8,6 +8,7 @@ import { useAuth } from "../../hooks/auth";
 import FulfilledStar from "../../assets/fulfilled-star.png";
 import EmptyStar from "../../assets/empty-star.png";
 import { Header } from "../../components/Header";
+import { Button } from "../../components/Button";
 import { ShowMovieCardItem } from "../../components/ShowMovieCardItem";
 
 import { Container, Content } from "./styles";
@@ -18,6 +19,15 @@ export function Details() {
     const params = useParams();
     const { user } = useAuth();
     const navigate = useNavigate();
+
+    async function handleRemove() {
+        const confirm = window.confirm("Deseja realmente remover o filme?");
+        
+        if(confirm) {
+            await api.delete(`/movies/${data.id}`);
+            navigate(-1);
+        }
+    }
 
     function handleBack() {
         navigate("/");
@@ -60,13 +70,24 @@ export function Details() {
                     </header>
 
                     <Content>
-                        <div className="title-wrapper">
-                            <h1>{data.title}</h1>
+                        <div className="details-header">
+                            <div className="title-wrapper">
+                                <h1>{data.title}</h1>
 
-                            <div className="rate-wrapper">
-                                {getRatingStars(data.rating)}
+                                <div className="rate-wrapper">
+                                    {getRatingStars(data.rating)}
+                                </div>
                             </div>
-                        </div>
+
+                            <Button
+                                title="Excluir filme"
+                                color={({ theme }) => theme.COLORS.ROSE}
+                                backgroundColor={({ theme }) => theme.COLORS.BACKGROUND_850}
+                                width="250px"
+                                margin="0px"
+                                onClick={handleRemove}
+                             />
+                       </div>
 
                         <div className="information">
                             <img src={`tmp/uploads/${user.avatar}`} alt={`Foto de ${user.name}`} />

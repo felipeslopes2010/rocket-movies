@@ -126,12 +126,6 @@ export function New() {
 
                     <div className="button-wrapper">
                         <Button
-                            title="Excluir filme"
-                            color={({ theme }) => theme.COLORS.ROSE}
-                            backgroundColor={({ theme }) => theme.COLORS.BLACK_900}
-                        />
-                        
-                        <Button
                             title="Salvar alterações"
                             onClick={handleNewMovie}
                         />

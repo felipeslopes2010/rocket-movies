@@ -51,11 +51,17 @@ export const Content = styled.div`
 
     scrollbar-color: ${({ theme }) => theme.COLORS.ROSE} transparent;
 
-    > .title-wrapper {
+    .details-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .title-wrapper {
                 display: flex;
                 align-items: center;
                 gap: 20px;
-                margin-bottom: 20px;
         
                 > .rate-wrapper {
                     display: flex;

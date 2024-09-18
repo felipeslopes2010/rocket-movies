@@ -20,12 +20,6 @@ export const Form = styled.form`
         display: flex;
         gap: 40px;
     }
-
-    > .button-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-    }
 `;
 
 export const StyledLink = styled(Link)`
