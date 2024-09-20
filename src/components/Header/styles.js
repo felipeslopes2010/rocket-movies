@@ -31,6 +31,10 @@ export const Profile = styled.div`
         justify-content: center;
         gap: 12px;
 
+        strong {
+            width: fit-content;
+        }
+
         img {
             height: 64px;
             width: 64px;
@@ -40,7 +44,7 @@ export const Profile = styled.div`
     > div {
         display: flex;
         flex-direction: column;
-        text-align: end;
+        align-items: end;
 
         span {
             font-size: 16px;
