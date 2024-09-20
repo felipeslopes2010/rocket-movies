@@ -1,6 +1,8 @@
 import { api } from "../../services/api"
 
 import { Tag } from "../Tag"
+import FulfilledStar from "../../assets/fulfilled-star.png";
+import EmptyStar from "../../assets/empty-star.png";
 
 import { Container } from "./styles";
 
@@ -15,6 +17,20 @@ export function MovieCard({ data, ...rest }) {
         }
     }
 
+    function getRatingStars(rating) {
+        const stars = [];
+        for (let i = 1; i <= 5; i++) {
+            stars.push(
+                <img
+                    key={i}
+                    src={i <= rating ? FulfilledStar : EmptyStar}
+                    alt={i <= rating ? "Estrela Preenchida" : "Estrela Vazia"}
+                />
+            );
+        }
+        return stars;
+    }
+
     return (
         <Container {...rest}>
             <div className="header">
@@ -25,11 +41,7 @@ export function MovieCard({ data, ...rest }) {
                  </button>
             </div>
 
-            <img src="../../src/assets/fulfilled-star.png" alt="Estrela Preenchida" />
-            <img src="../../src/assets/fulfilled-star.png" alt="Estrela Preenchida" />
-            <img src="../../src/assets/fulfilled-star.png" alt="Estrela Preenchida" />
-            <img src="../../src/assets/fulfilled-star.png" alt="Estrela Preenchida" />
-            <img src="../../src/assets/empty-star.png" alt="Estrela Vazia" />
+            {getRatingStars(data.rating)}
 
             <p>
                 {data.description}

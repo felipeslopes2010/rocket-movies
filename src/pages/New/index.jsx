@@ -8,11 +8,11 @@ import { TextArea } from "../../components/TextArea";
 import { Section } from "../../components/Section";
 import { MovieCardItem } from "../../components/MovieCardItem";
 import { Button } from "../../components/Button";
+import { ButtonText } from "../../components/ButtonText";
 
 import { api } from "../../services/api"
 
-import { Container, Form, StyledLink } from "./styles";
-
+import { Container, Form } from "./styles";
 
 export function New() {
     const [title, setTitle] = useState("");
@@ -22,6 +22,10 @@ export function New() {
     const [newTag, setNewTag] = useState("");
 
     const navigate = useNavigate();
+
+    function handleBack() {
+        navigate(-1);
+    }
 
     function handleAddTag() {
         setTags(prevState => [...prevState, newTag]);
@@ -55,7 +59,7 @@ export function New() {
         try {
             await api.post("/movies", movie);
             alert("Filme criado com sucesso!")
-            navigate("/");
+            navigate(-1);
         } catch(error) {
             if (error.response) {
                 alert(error.response.data.message);
@@ -71,10 +75,13 @@ export function New() {
 
             <main>
                 <Form>
-                    <StyledLink to="/">
+                    <div
+                        className="back-container"
+                        onClick={handleBack}    
+                    >
                         <FiArrowLeft />
-                        <span>Voltar</span>
-                    </StyledLink>
+                        <ButtonText title="Voltar" isActive />
+                    </div>
 
                     <h1>Novo filme</h1>
 

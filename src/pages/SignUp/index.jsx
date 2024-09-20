@@ -4,10 +4,12 @@ import { useState } from "react";
 
 import { api } from "../../services/api";
 
-import { Container, Form, Background } from "./styles"
-
+import { ButtonText } from "../../components/ButtonText";
 import { Button } from "../../components/Button"
 import { Input } from "../../components/Input"
+
+import { Container, Form, Background } from "./styles"
+
 
 export function SignUp() {
     const [name, setName] = useState("");
@@ -15,6 +17,10 @@ export function SignUp() {
     const [password, setPassword] = useState("");
 
     const navigate = useNavigate();
+
+    function handleBack() {
+        navigate(-1);
+    }
 
     function handleSignUp() {
         if (!name || !email || !password) {
@@ -70,11 +76,10 @@ export function SignUp() {
                     onClick={handleSignUp}
                 />
 
-                <Link to="/">
+                <div className="back-wrapper" onClick={handleBack}>
                     <FiArrowLeft />
-                    Voltar para o login
-                </Link>
-
+                    <ButtonText title="Voltar para o login" isActive />
+                </div>
             </Form>
 
             <Background />

@@ -14,26 +14,27 @@ export const Container = styled.div`
     }
     
     .header-button {
-        .controls {
-            display: flex;
-            align-items: center;
-
-            margin: 64px 0px 64px 144px;
-            
-            font-size: 16px;
-            color: ${({ theme }) => theme.COLORS.ROSE};
-
-            cursor: pointer;
-        }
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        margin: 64px 0px 64px 144px;
+        gap: 2px;
+        font-size: 16px;
+        color: ${({theme}) => theme.COLORS.ROSE};
+        cursor: pointer;
 
         svg {
-            font-size: 24px;
+            font-size: 20px;
             margin-right: 8px;
         }
 
         span { 
             font-size: 20px;
         }
+    }
+
+    .header-button:hover {
+        opacity: 0.8;
     }
 `;
 

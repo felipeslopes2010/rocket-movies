@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FiArrowLeft, FiCamera, FiLock, FiMail, FiUser } from "react-icons/fi";
-import { Link } from "react-router-dom";
 
 import { useAuth } from "../../hooks/auth"
 
@@ -9,12 +9,14 @@ import avatarPlaceHolder from "../../assets/avatar_placeholder.svg";
 
 import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
+import { ButtonText } from "../../components/ButtonText";
 
 import { Container, Avatar, Form } from "./styles";
 
 
 export function Profile() {
     const { user, updateProfile } = useAuth();
+    const navigate = useNavigate();
 
     const [name, setName] = useState(user.name);
     const [email, setEmail] = useState(user.email);
@@ -25,6 +27,10 @@ export function Profile() {
 
     const [avatar, setAvatar] = useState(avatarURL);
     const [avatarFile, setAvatarFile] = useState(null);
+
+    function handleBack() {
+        navigate(-1);
+    }
 
     async function handleUpdate() {
         const user = {
@@ -48,11 +54,9 @@ export function Profile() {
     return (
         <Container>
             <header>
-                <div className="header-button">
-                    <Link to="/" className="controls">
+                <div className="header-button" onClick={handleBack}>
                         <FiArrowLeft />
-                        <span>Voltar</span>
-                    </Link>
+                        <ButtonText title="Voltar" isActive />
                 </div>
             </header>
 

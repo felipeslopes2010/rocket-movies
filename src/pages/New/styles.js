@@ -1,11 +1,25 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+
 
 export const Container = styled.div`
     > main {
         padding: 30px 106px 83px 123px;
         max-width: 1137px;
         margin: 0px auto;
+    }
+
+    .back-container {
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        color: ${({theme}) => theme.COLORS.ROSE};
+        cursor: pointer;
+    }
+
+    .back-container:hover {
+        opacity: 0.8;
     }
 `;
 
@@ -20,17 +34,4 @@ export const Form = styled.form`
         display: flex;
         gap: 40px;
     }
-`;
-
-export const StyledLink = styled(Link)`
-        width: fit-content;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        cursor: pointer;
-
-        > svg, span {
-            font-size: 16px;
-            color: ${({theme}) => theme.COLORS.ROSE};
-        }
 `;

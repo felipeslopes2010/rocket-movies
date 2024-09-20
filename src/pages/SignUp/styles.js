@@ -45,6 +45,17 @@ export const Form = styled.form`
             margin-right: 8px;
         }
     }
+
+    .back-wrapper {
+            width: fit-content;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 20px;
+            color: ${({theme}) => theme.COLORS.ROSE};
+            margin-top: 42px;
+            cursor: pointer;
+        }
 `;
 
 export const Background = styled.div`
