@@ -14,6 +14,7 @@ export function MovieCard({ data, ...rest }) {
         
         if(confirm) {
             await api.delete(`/movies/${data.id}`);
+            alert("Filme excluído com sucesso!");
         }
     }
 

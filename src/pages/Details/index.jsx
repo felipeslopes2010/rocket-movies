@@ -23,9 +23,13 @@ export function Details() {
     async function handleRemove() {
         const confirm = window.confirm("Deseja realmente remover o filme?");
         
-        if(confirm) {
+        if (confirm) {
             await api.delete(`/movies/${data.id}`);
             navigate(-1);
+        
+            setTimeout(() => {
+                alert("Filme excluído com sucesso!");
+            }, 150);
         }
     }
 

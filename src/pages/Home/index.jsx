@@ -27,7 +27,7 @@ export function Home() {
         }
 
         loadMovies();
-    }, []);
+    }, [movies]);
 
     useEffect(() => {
         if (search) {
@@ -37,7 +37,7 @@ export function Home() {
         } else {
             setFilteredMovies(movies);
         }
-    }, [search]);
+    }, [search, movies]);
 
     return (
         <Container>
