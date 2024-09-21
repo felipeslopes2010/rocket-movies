@@ -97,9 +97,9 @@ export function New() {
                             type="number"
                             width="50%"
                             margin="0px 0px 20px 0px"
-                            min={0}
+                            min={1}
                             max={5}
-                            placeholder="Sua nota (de 0 a 5)"
+                            placeholder="Sua nota (de 1 a 5)"
                             onChange={e => setRating(e.target.value)}
                         />
                     </div>

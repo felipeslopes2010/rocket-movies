@@ -1,5 +1,5 @@
 import { FiMail, FiLock, FiUser, FiArrowLeft } from "react-icons/fi"
-import { Link, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useState } from "react";
 
 import { api } from "../../services/api";
