@@ -1,5 +1,5 @@
 import { Input } from "../Input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
@@ -10,12 +10,22 @@ import { Container, Profile } from "./styles";
 export function Header({ onSearchChange }) {
     const { signOut, user } = useAuth();
 
+    const navigate = useNavigate();
+
     const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceHolder;
+
+    function handleBack() {
+        navigate(-1);
+    }
 
     return (
         <Container>
             <Profile>
-                <h1>RocketMovies</h1>
+                <h1
+                    onClick={handleBack}
+                >
+                    RocketMovies
+                </h1>
 
                 <Input
                     placeholder="Pesquisar pelo título"

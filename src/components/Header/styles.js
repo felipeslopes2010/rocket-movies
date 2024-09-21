@@ -19,6 +19,7 @@ export const Profile = styled.div`
 
     > h1 {
         color: ${({ theme }) => theme.COLORS.ROSE};
+        cursor: pointer;
     }
 
     .header-input {
