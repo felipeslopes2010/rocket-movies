@@ -15,7 +15,7 @@ export function Header({ onSearchChange }) {
     const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceHolder;
 
     function handleBack() {
-        navigate(-1);
+        navigate("/");
     }
 
     return (

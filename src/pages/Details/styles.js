@@ -62,6 +62,7 @@ export const Content = styled.div`
                 display: flex;
                 align-items: center;
                 gap: 20px;
+                line-height: 0px;
         
                 > .rate-wrapper {
                     display: flex;
