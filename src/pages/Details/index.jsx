@@ -102,7 +102,7 @@ export function Details() {
                                 color={({ theme }) => theme.COLORS.ROSE}
                                 backgroundColor={({ theme }) => theme.COLORS.BACKGROUND_850}
                                 width="250px"
-                                margin="0px"
+                                margin="0px 15px 0px 0px"
                                 onClick={handleRemove}
                              />
                        </div>

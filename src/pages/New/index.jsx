@@ -91,6 +91,7 @@ export function New() {
                             width="50%"
                             margin="0px 0px 20px 0px"
                             placeholder="Título"
+                            maxLength="30"
                             onChange={e => setTitle(e.target.value)}
                         />
                         <Input
@@ -125,6 +126,7 @@ export function New() {
                                 isNew
                                 placeholder="Novo marcador"
                                 value={newTag}
+                                maxLength="20"
                                 onChange={e => setNewTag(e.target.value)}
                                 onClick={handleAddTag}
                             />

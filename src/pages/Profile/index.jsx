@@ -82,6 +82,7 @@ export function Profile() {
                     icon={FiUser} margin="0px 0px 8px 0px"
                     placeholder="Nome"
                     value={name}
+                    maxLength="30"
                     onChange={e => setName(e.target.value)}
                 />
 
@@ -90,6 +91,7 @@ export function Profile() {
                     margin="0px 0px 24px 0px"
                     placeholder="E-mail"
                     value={email}
+                     maxLength="35"
                     onChange={e => setEmail(e.target.value)}
                 />
 

@@ -51,6 +51,7 @@ export function SignUp() {
                 <Input
                     placeholder="Nome"
                     type="text"
+                    maxLength="30"
                     icon={FiUser}
                     margin={"0px 0px 8px 0px"}
                     onChange={e => setName(e.target.value)}
