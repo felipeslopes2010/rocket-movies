@@ -64,13 +64,12 @@ export const Content = styled.div`
                 gap: 20px;
                 line-height: 0px;
         
-                > .rate-wrapper {
+                > .rating-wrapper {
                     display: flex;
                     align-items: center;
-                    > img {
-                        height: 20px;
-                        width: 20px;
-                    }
+                    color: ${({ theme }) => theme.COLORS.ROSE};
+                    font-size: 20px;
+                    margin: 2px 0px 0px 0px;
                 }
            }
 

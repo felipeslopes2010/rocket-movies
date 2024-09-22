@@ -29,8 +29,9 @@ export const Container = styled.div`
         text-overflow: ellipsis;
     }
 
-     img {
+    .rating-wrapper {
         margin-bottom: 15px;
+        color: ${({theme}) => theme.COLORS.ROSE};
     }
     
     p {

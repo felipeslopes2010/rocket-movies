@@ -1,8 +1,8 @@
 import { api } from "../../services/api"
 
 import { Tag } from "../Tag"
-import FulfilledStar from "../../assets/fulfilled-star.png";
-import EmptyStar from "../../assets/empty-star.png";
+import { MdStarBorder } from "react-icons/md";
+import { MdStar } from "react-icons/md";
 
 import { Container } from "./styles";
 
@@ -22,11 +22,9 @@ export function MovieCard({ data, ...rest }) {
         const stars = [];
         for (let i = 1; i <= 5; i++) {
             stars.push(
-                <img
-                    key={i}
-                    src={i <= rating ? FulfilledStar : EmptyStar}
-                    alt={i <= rating ? "Estrela Preenchida" : "Estrela Vazia"}
-                />
+                <span key={i}>
+                    {i <= rating ? <MdStar /> : <MdStarBorder />}
+                </span>
             );
         }
         return stars;
@@ -42,7 +40,9 @@ export function MovieCard({ data, ...rest }) {
                  </button>
             </div>
 
-            {getRatingStars(data.rating)}
+            <div className="rating-wrapper">
+                {getRatingStars(data.rating)}
+            </div>
 
             <p>
                 {data.description}

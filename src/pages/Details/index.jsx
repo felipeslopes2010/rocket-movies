@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { FiArrowLeft, FiClock } from "react-icons/fi";
+import { MdStarBorder } from "react-icons/md";
+import { MdStar } from "react-icons/md";
 
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
 
-import FulfilledStar from "../../assets/fulfilled-star.png";
-import EmptyStar from "../../assets/empty-star.png";
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
 import { ShowMovieCardItem } from "../../components/ShowMovieCardItem";
@@ -41,15 +41,13 @@ export function Details() {
         const stars = [];
         for (let i = 1; i <= 5; i++) {
             stars.push(
-                <img
-                    key={i}
-                    src={i <= rating ? FulfilledStar : EmptyStar}
-                    alt={i <= rating ? "Estrela Preenchida" : "Estrela Vazia"}
-                />
+                <span key={i}>
+                    {i <= rating ? <MdStar /> : <MdStarBorder />}
+                </span>
             );
         }
         return stars;
-    }
+    }    
 
     function formateDate(dateCreatedAt) {
 
@@ -92,7 +90,7 @@ export function Details() {
                             <div className="title-wrapper">
                                 <h1>{data.title}</h1>
 
-                                <div className="rate-wrapper">
+                                <div className="rating-wrapper">
                                     {getRatingStars(data.rating)}
                                 </div>
                             </div>
