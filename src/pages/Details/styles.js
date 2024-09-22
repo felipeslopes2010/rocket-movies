@@ -85,8 +85,9 @@ export const Content = styled.div`
             margin-bottom: 40px;
     
             > img {
-                width: 16px;
-                height: 16px;
+                object-fit: cover;
+                width: 25px;
+                height: 25px;
                 border-radius: 50%;
                 border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_700};
             }

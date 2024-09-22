@@ -56,6 +56,7 @@ export const Avatar = styled.div`
     margin-bottom: 64px;
     
     > img {
+        object-fit: cover;
         width: 186px;
         height: 186px;
         margin-top: -93px;

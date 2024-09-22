@@ -6,6 +6,7 @@ import { MdStar } from "react-icons/md";
 
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
+import avatarPlaceHolder from "../../assets/avatar_placeholder.svg";
 
 import { Header } from "../../components/Header";
 import { Button } from "../../components/Button";
@@ -19,6 +20,8 @@ export function Details() {
     const params = useParams();
     const { user } = useAuth();
     const navigate = useNavigate();
+
+    const avatarURL = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceHolder;
 
     async function handleRemove() {
         const confirm = window.confirm("Deseja realmente remover o filme?");
@@ -49,8 +52,7 @@ export function Details() {
         return stars;
     }    
 
-    function formateDate(dateCreatedAt) {
-
+    function formateDate() {
     const date = new Date(data.created_at);
 
     const day = String(date.getDate()).padStart(2, '0');
@@ -106,10 +108,10 @@ export function Details() {
                        </div>
 
                         <div className="information">
-                            <img src={`tmp/uploads/${user.avatar}`} alt={`Foto de ${user.name}`} />
+                            <img src={avatarURL} alt={`Foto de ${user.name}`} />
                             <span>{`Por ${user.name}`}</span>
                             <FiClock />
-                            <span>{formateDate(data.created_at)}</span>
+                            <span>{formateDate()}</span>
                         </div>
 
                         {
