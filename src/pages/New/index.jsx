@@ -28,6 +28,12 @@ export function New() {
     }
 
     function handleAddTag() {
+        const tagAlreadyExists = tags.includes(newTag);
+
+        if (tagAlreadyExists) {
+            return alert(`O filme ${title} já possuí a Tag: ${newTag}`);
+        }
+
         setTags(prevState => [...prevState, newTag]);
         setNewTag("");
     }
