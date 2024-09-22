@@ -121,7 +121,8 @@ export function New() {
                                     />
                                 ))
                             }
-
+                            {
+                        tags.length < 3 &&
                             <MovieCardItem
                                 isNew
                                 placeholder="Novo marcador"
@@ -130,6 +131,7 @@ export function New() {
                                 onChange={e => setNewTag(e.target.value)}
                                 onClick={handleAddTag}
                             />
+                        }
                         </div>
                     </Section>
 
