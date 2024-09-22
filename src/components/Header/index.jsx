@@ -32,6 +32,7 @@ export function Header({ onSearchChange }) {
                     type="text"
                     className="header-input"
                     width="40%"
+                    maxLength="30"
                     margin="0 288px"
                     onChange={e => onSearchChange(e.target.value)}
                 />
