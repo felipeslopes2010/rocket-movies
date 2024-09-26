@@ -30,6 +30,17 @@ export const Section = styled.div`
 
         scrollbar-color: ${({ theme }) => theme.COLORS.ROSE} transparent;
     }
+
+    .no-movies {
+        display: flex;
+        align-items: center;
+        gap: 100px;
+        margin-top: 150px;
+
+        > h3 {
+            font-size: 40px;
+        }
+    }
 `;
 
 export const Menu = styled.div`

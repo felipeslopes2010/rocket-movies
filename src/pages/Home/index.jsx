@@ -5,6 +5,7 @@ import { FiPlus } from "react-icons/fi";
 import { api } from "../../services/api";
 import { Header } from "../../components/Header";
 import { MovieCard } from "../../components/MovieCard";
+import star from "../../assets/star.svg";
 
 import { Container, Content, NewMovie, Section } from "./styles";
 
@@ -31,7 +32,7 @@ export function Home() {
 
     useEffect(() => {
         if (search) {
-            setFilteredMovies(movies.filter(movie => 
+            setFilteredMovies(movies.filter(movie =>
                 movie.title.toLowerCase().includes(search.toLowerCase())
             ));
         } else {
@@ -53,15 +54,22 @@ export function Home() {
 
             <Content>
                 <Section title="Meus Filmes">
-                {
-                    filteredMovies.map(movie => (
-                        <MovieCard
-                            key={String(movie.id)}
-                            data={movie}
-                            onClick={() => handleDetails(movie.id)}
-                        />
-                    ))
-                }
+                    {
+                        filteredMovies.length > 0 ? (
+                            filteredMovies.map(movie => (
+                                <MovieCard
+                                    key={String(movie.id)}
+                                    data={movie}
+                                    onClick={() => handleDetails(movie.id)}
+                                />
+                            ))
+                        ) : (
+                            <div className="no-movies">
+                                <img src={star} alt="Ícone Estrela" />
+                                <h3>Nenhum filme cadastrado</h3>
+                            </div>
+                        )
+                    }
                 </Section>
             </Content>
         </Container>
