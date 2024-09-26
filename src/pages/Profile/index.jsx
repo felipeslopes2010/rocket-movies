@@ -91,7 +91,7 @@ export function Profile() {
                     margin="0px 0px 24px 0px"
                     placeholder="E-mail"
                     value={email}
-                     maxLength="35"
+                    maxLength="100"
                     onChange={e => setEmail(e.target.value)}
                 />
 
@@ -100,6 +100,7 @@ export function Profile() {
                     margin="0px 0px 8px 0px"
                     placeholder="Senha atual"
                     type="password"
+                    maxLength="20"
                     onChange={e => setOldPassword(e.target.value)}
                 />
 
@@ -108,6 +109,7 @@ export function Profile() {
                     margin="0px 0px 0px 0px"
                     placeholder="Nova senha"
                     type="password"
+                    maxLength="20"
                     onChange={e => setNewPassword(e.target.value)}
                 />
 

@@ -60,6 +60,7 @@ export function SignUp() {
                 <Input
                     placeholder="E-mail"
                     type="text"
+                    maxLength="100"
                     icon={FiMail}
                     margin={"0px 0px 8px 0px"}
                     onChange={e => setEmail(e.target.value)}
@@ -68,6 +69,7 @@ export function SignUp() {
                 <Input
                     placeholder="Senha"
                     type="password"
+                    maxLength="20"
                     icon={FiLock}
                     onChange={e => setPassword(e.target.value)}
                 />
