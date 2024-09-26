@@ -19,9 +19,15 @@ export function SignIn() {
         signIn({ email, password });
     }
 
+    function handleEnterPressed(event) {
+        if (event.key === "Enter") {
+            handleSignIn();
+        }
+    }
+
     return (
         <Container>
-            <Form>
+            <Form onKeyDown={handleEnterPressed}>
                 <h1>RocketMovies</h1>
                 <p>Aplicação para acompanhar tudo que assistir.</p>
 
@@ -52,7 +58,6 @@ export function SignIn() {
                 <Link to="/register">
                     Criar conta
                 </Link>
-
             </Form>
 
             <Background />
